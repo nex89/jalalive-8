@@ -12,11 +12,21 @@ const matches = [
 
 <!doctype html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QFMZTP0Z69" is:inline></script>
+		<script is:inline>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-QFMZTP0Z69');
+		</script>
+	
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		```
         <meta name="keywords" content="score808, live streaming bola, nonton bola hd, link alternatif score808" />
         <style>
             :root { --accent: #00ff88; --bg: #020617; --card: #0f172a; }
