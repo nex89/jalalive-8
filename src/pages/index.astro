@@ -1,16 +1,17 @@
 ---
-// NewHouseFlip Template - jalalive-2
-// Style: Eeshape Inspired (Clean, Minimalist, Emerald)
-// Link: cukurukuk.co (Partner Resmi)
+// AlabamaBelle - SEO Powerhouse Template
+// Focus: High Ranking, Fast Indexing, Anti-Theft
+// Partner: cukurukuk.co
 
-const siteUrl = "https://www.newhouseflip.com";
-const partnerUrl = "https://cukurukuk.co"; // URL Partner Resmi
-const pageTitle = "JALALIVE - Live Football Streaming HD & Match Schedules";
-const pageDesc = "Nonton siaran langsung sepak bola kualitas HD. Jadwal pertandingan terlengkap hari ini, partner resmi dari JALALIVE melalui cukurukuk.co.";
+const siteUrl = "[https://www.alabamabelle.com](https://www.alabamabelle.com)";
+const partnerUrl = "[https://cukurukuk.co](https://cukurukuk.co)";
+const pageTitle = "JALALIVE - Nonton Bola Live Streaming HD & Jadwal Terlengkap";
+const pageDesc = "Situs resmi JALALIVE untuk live streaming bola kualitas HD tanpa buffering. Jadwal harian 15+ liga top dunia, partner eksklusif cukurukuk.co.";
 
+// Data Jadwal (Pastikan teks murni agar terbaca Google Crawler)
 const matches = [
-  { time: "02:00", date: "02 Mei", home: "Real Madrid", away: "Man City", league: "Champions League" },
-  { time: "02:00", date: "02 Mei", home: "Bayern Munich", away: "Arsenal", league: "Champions League" },
+  { time: "02:00", date: "02 Mei", home: "Real Madrid", away: "Man City", league: "UEFA Champions League" },
+  { time: "02:00", date: "02 Mei", home: "Bayern Munich", away: "Arsenal", league: "UEFA Champions League" },
   { time: "23:45", date: "03 Mei", home: "AS Roma", away: "AC Milan", league: "Europa League" },
   { time: "02:00", date: "03 Mei", home: "Liverpool", away: "Atalanta", league: "Europa League" },
   { time: "18:30", date: "04 Mei", home: "Arsenal", away: "Bournemouth", league: "Premier League" },
@@ -25,6 +26,18 @@ const matches = [
   { time: "02:00", date: "09 Mei", home: "Real Madrid", away: "Bayern", league: "Champions League" },
   { time: "02:00", date: "10 Mei", home: "Leverkusen", away: "Roma", league: "Europa League" }
 ];
+
+// JSON-LD Schema untuk SEO agar muncul di Google Event
+const schemaData = JSON.stringify({
+  "@context": "[https://schema.org](https://schema.org)",
+  "@type": "ItemList",
+  "itemListElement": matches.map((m, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": `Live Stream ${m.home} vs ${m.away}`,
+    "url": partnerUrl
+  }))
+});
 ---
 
 <html lang="id">
@@ -34,145 +47,146 @@ const matches = [
     <title>{pageTitle}</title>
     <meta name="description" content={pageDesc} />
     <link rel="canonical" href={siteUrl} />
-    <link rel="icon" href="data:," /> <!-- Matikan Favicon secara total -->
+    <link rel="icon" href="data:," />
+
+    <!-- Google Structured Data -->
+    <script type="application/ld+json" set:html={schemaData}></script>
 
     <style>
         :root {
-            --emerald: #10b981;
-            --dark-bg: #022c22;
-            --card-bg: #0a0a0a;
+            --primary: #10b981; /* Emerald Green */
+            --bg: #050505;
+            --surface: #0f172a;
         }
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: var(--bg);
+            color: #f8fafc;
             font-family: 'Inter', sans-serif;
             margin: 0;
-            -webkit-user-select: none; user-select: none; /* Proteksi Anti-Copy */
+            line-height: 1.6;
+            -webkit-user-select: none; user-select: none; /* Anti-Copy */
         }
-        .nav {
-            padding: 30px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+        .header {
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1e293b;
+            background: linear-gradient(to bottom, #022c22, var(--bg));
+        }
+        .logo { font-size: 2.2rem; font-weight: 900; letter-spacing: -1.5px; margin: 0; }
+        .logo span { color: var(--primary); }
+        
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        
+        /* Schedule Card - SEO Optimized */
+        .match-card {
+            background: #111;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 18px 25px;
+            transition: 0.3s;
         }
-        .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -1px; text-decoration: none; color: #fff; }
-        .logo span { color: var(--emerald); }
-        .partner-btn { color: var(--emerald); text-decoration: none; font-size: 0.7rem; font-weight: bold; border: 1px solid rgba(16, 185, 129, 0.3); padding: 5px 12px; border-radius: 20px; transition: 0.3s; }
-        .partner-btn:hover { background: var(--emerald); color: #000; }
-        
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to bottom, var(--dark-bg), #000);
-        }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { color: var(--emerald); font-weight: 600; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; }
+        .match-card:hover { border-color: var(--primary); background: #161b22; }
+        .info { flex: 1; }
+        .match-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+        .league { color: var(--primary); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .time-box { text-align: right; margin-right: 30px; }
+        .time { font-size: 1.2rem; font-weight: 800; }
+        .date { font-size: 0.7rem; color: #64748b; }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
-
-        .match-row {
-            display: grid;
-            grid-template-columns: 100px 1fr 100px;
-            align-items: center;
-            padding: 22px;
-            border-bottom: 1px solid #111;
-            transition: background 0.3s;
-        }
-        .match-row:hover { background: #050505; }
-        .time { font-weight: 800; font-size: 1.1rem; color: #eee; }
-        .teams { font-weight: 600; font-size: 1.05rem; }
-        .teams small { display: block; color: #555; font-size: 0.75rem; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .btn-live {
-            text-align: center;
-            color: var(--emerald);
+        .btn-nonton {
+            background: #fff;
+            color: #000;
             text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 8px;
             font-weight: 800;
-            font-size: 0.75rem;
-            border: 1px solid var(--emerald);
-            padding: 6px 12px;
-            border-radius: 4px;
-            transition: all 0.3s;
+            font-size: 0.8rem;
+            transition: 0.3s;
         }
-        .btn-live:hover { background: var(--emerald); color: #000; }
+        .btn-nonton:hover { background: var(--primary); color: #fff; }
 
-        .article-section {
-            margin-top: 80px;
-            line-height: 1.9;
-            color: #888;
-            border-top: 1px solid #1a1a1a;
-            padding: 50px 0 100px;
-        }
-        .article-section h2, .article-section h3 { color: #fff; margin-top: 40px; }
-        .article-section p { margin-bottom: 20px; text-align: justify; }
-        .article-section a { color: var(--emerald); text-decoration: underline; }
+        /* Long Form Article Section */
+        .seo-article { margin-top: 60px; border-top: 1px solid #1e293b; padding-top: 40px; }
+        .seo-article h1, .seo-article h2 { color: var(--primary); }
+        .seo-article p { color: #94a3b8; font-size: 1rem; margin-bottom: 20px; text-align: justify; }
+        .seo-article a { color: var(--primary); font-weight: bold; }
     </style>
 </head>
 <body oncontextmenu="return false;">
 
-    <nav class="nav">
-        <a href="/" class="logo">NEWHOUSE<span>FLIP</span></a>
-        <a href={partnerUrl} target="_blank" class="partner-btn">GOTO CUKURUKUK.CO</a>
-    </nav>
-
-    <header class="hero">
-        <p>Official Partner JALALIVE</p>
-        <h1>Jadwal Bola Hari Ini</h1>
+    <header class="header">
+        <h1 class="logo">ALABAMA<span>BELLE</span></h1>
+        <p style="font-size: 0.8rem; color: #64748b; margin-top: 10px;">Official Mirror of <a href={partnerUrl} style="color:var(--primary)">cukurukuk.co</a></p>
     </header>
 
     <main class="container">
-        <div class="match-list">
-            {matches.map((m) => (
-                <div class="match-row">
-                    <div class="time">{m.time}</div>
-                    <div class="teams">
-                        {m.home} vs {m.away}
-                        <small>{m.league} • {m.date}</small>
-                    </div>
-                    <a href={partnerUrl} target="_blank" class="btn-live">NONTON</a>
-                </div>
-            ))}
+        <!-- Live Indicator -->
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+            <span style="width:10px; height:10px; background:red; border-radius:50%; animation:pulse 1s infinite;"></span>
+            <span style="font-weight:bold; font-size:0.9rem;">LIVE MATCHES TODAY</span>
         </div>
 
-        <article class="article-section">
-            <h2>Analisis Mendalam & Layanan Eksklusif JALALIVE</h2>
+        <section class="schedule-list">
+            {matches.map((m) => (
+                <div class="match-card">
+                    <div class="time-box">
+                        <div class="time">{m.time}</div>
+                        <div class="date">{m.date}</div>
+                    </div>
+                    <div class="info">
+                        <div class="league">{m.league}</div>
+                        <div class="match-name">{m.home} vs {m.away}</div>
+                    </div>
+                    <a href={partnerUrl} target="_blank" class="btn-nonton">WATCH LIVE</a>
+                </div>
+            ))}
+        </section>
+
+        <!-- SEO Content - Diperpanjang untuk Ranking -->
+        <article class="seo-article">
+            <h1>JALALIVE: Platform Live Streaming Bola Terpercaya</h1>
             <p>
-                Dalam era digital yang berkembang pesat, **JALALIVE** muncul sebagai destinasi utama bagi para penggemar sepak bola yang mendambakan kualitas tanpa kompromi. Mengambil inspirasi dari filosofi desain minimalis **eeshape**, kami percaya bahwa antarmuka yang bersih adalah kunci untuk kenyamanan pengguna dalam mengakses informasi jadwal pertandingan yang padat. Fokus kami bukan hanya pada kuantitas, tetapi pada presisi data yang disajikan secara real-time melalui kolaborasi erat dengan <a href={partnerUrl} target="_blank">cukurukuk.co</a>.
+                Selamat datang di **JALALIVE**, solusi digital terdepan untuk menyaksikan siaran langsung sepak bola dari berbagai belahan dunia. Dalam industri penyiaran yang semakin kompetitif, JALALIVE berkomitmen memberikan aksesibilitas tanpa batas bagi para penggemar fanatik si kulit bundar. Bekerja sama secara eksklusif dengan <a href={partnerUrl} target="_blank">cukurukuk.co</a>, kami menghadirkan link streaming yang telah dioptimasi untuk kualitas High Definition (HD).
             </p>
 
-            <h3>Infrastruktur Berkecepatan Tinggi</h3>
+            <h2>Kenapa Memilih JALALIVE?</h2>
             <p>
-                Setiap detik dalam pertandingan sepak bola adalah momentum berharga. Oleh karena itu, JALALIVE yang didukung penuh oleh infrastruktur <a href={partnerUrl} target="_blank">cukurukuk.co</a>, menggunakan server dengan latensi rendah untuk memastikan siaran berjalan stabil. Teknologi Astro v4 yang kami terapkan memungkinkan website ini beroperasi tanpa beban JavaScript yang berat, sehingga akses melalui perangkat seluler sekalipun akan terasa sangat ringan dan responsif, bahkan di area dengan koneksi internet terbatas.
+                Kenyamanan pengguna adalah prioritas nomor satu bagi kami. Website JALALIVE dibangun menggunakan arsitektur Astro v4 yang sangat efisien, memastikan waktu pemuatan halaman yang sangat singkat di bawah 1 detik. Kami memahami bahwa dalam pertandingan besar seperti Derby London atau El Clasico, setiap detik sangatlah berarti. Dengan meminimalisir penggunaan aset yang tidak perlu—seperti ketiadaan favicon—kami memastikan bandwidth Anda sepenuhnya digunakan untuk kualitas video.
             </p>
 
-            <h3>Cakupan Liga dan Turnamen Global HD</h3>
+            <h2>Teknologi Streaming Anti-Buffering</h2>
             <p>
-                Kami menyadari bahwa kecintaan terhadap sepak bola tidak mengenal batas wilayah. Di JALALIVE, Anda akan menemukan kompilasi jadwal dari lebih 15 liga elit dunia secara harian. Mulai dari panasnya persaingan Premier League di Inggris, keanggunan taktis Serie A di Italia, hingga drama luar biasa di Liga Champions Eropa. Semua jadwal ini disusun secara sistematis agar Anda tidak melewatkan satu pun kick-off penting dari tim kesayangan Anda. Melalui integrasi dengan <a href={partnerUrl} target="_blank">cukurukuk.co</a>, kualitas visual yang dihadirkan selalu terjaga pada standar definisi tinggi.
+                Infrastruktur yang didukung oleh <a href={partnerUrl} target="_blank">cukurukuk.co</a> memungkinkan distribusi konten melalui server global dengan latensi rendah. Hal ini meminimalkan risiko buffering bahkan saat trafik melonjak tinggi. Selain itu, aspek keamanan menjadi perhatian serius kami. JALALIVE menerapkan enkripsi tingkat lanjut dan script proteksi konten untuk menjaga privasi pengguna serta integritas data yang kami sajikan.
             </p>
 
-            <h3>Kualitas Visual dan Standar Keamanan Digital</h3>
+            <h2>Jadwal Lengkap Liga Elit Dunia</h2>
             <p>
-                Memberikan akses gratis bukan berarti kami menurunkan standar kualitas. Setiap link yang tersedia di platform kami dirancang untuk mendukung resolusi High Definition (HD) yang memberikan ketajaman gambar maksimal. Selain dari sisi visual, kami juga sangat memperhatikan aspek keamanan digital. Sesuai dengan permintaan privasi, platform ini dilengkapi dengan sistem proteksi tingkat tinggi yang mencegah penggandaan konten secara ilegal. Pengalaman menonton di JALALIVE yang terafiliasi dengan <a href={partnerUrl} target="_blank">cukurukuk.co</a> menjamin ekosistem yang tetap aman dan terpercaya bagi semua pengunjung tanpa gangguan elemen eksternal yang tidak perlu.
-            </p>
-
-            <h3>Visi Menuju Masa Depan Streaming Interaktif</h3>
-            <p>
-                Ke depannya, JALALIVE berkomitmen untuk terus berinovasi dalam penyediaan konten olahraga yang lebih interaktif. Dengan tetap mempertahankan estetika modern dan ketiadaan elemen yang mengganggu seperti favicon yang tidak perlu atau iklan pop-up yang agresif, kami ingin membangun standar baru dalam industri streaming bola di Indonesia. Dukungan dari <a href={partnerUrl} target="_blank">cukurukuk.co</a> memungkinkan kami untuk terus memperluas bandwidth server demi kenyamanan Anda. Bergabunglah bersama komunitas kami dan rasakan bedanya menonton bola dengan standar profesional yang hanya bisa Anda dapatkan di sini.
+                Dapatkan jadwal harian yang akurat untuk Liga Inggris, La Liga Spanyol, Bundesliga Jerman, hingga kompetisi kasta tertinggi antar klub Eropa, Liga Champions. Semua informasi yang kami sajikan di JALALIVE diperbarui secara real-time, memberikan Anda panduan lengkap untuk merencanakan waktu menonton tim favorit. Kami mengundang Anda untuk bergabung bersama ribuan penonton lainnya dan menikmati standar baru dalam dunia streaming bola hanya di JALALIVE.
             </p>
         </article>
     </main>
 
-    <footer style="text-align: center; padding: 50px; color: #222; font-size: 0.7rem; border-top: 1px solid #111;">
-        &copy; 2026 JALALIVE. Supported by <a href={partnerUrl} style="color:#333; text-decoration:none;">cukurukuk.co</a>. No Favicon Applied.
+    <footer style="text-align:center; padding:60px 20px; color:#334155; font-size:0.8rem; border-top: 1px solid #1e293b;">
+        &copy; 2026 JALALIVE. Powered by <a href={partnerUrl} style="color:#475569;">cukurukuk.co</a>. All Rights Reserved.
     </footer>
 
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 0, 0, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+    </style>
+
     <script is:inline>
-        // Anti F12, Ctrl+U, Klik Kanan (Proteksi Penuh)
+        // SEO Protection & Anti-Theft
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onkeydown = function(e) {
-            if (e.keyCode == 123 || (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0)))) {
+            if (e.keyCode == 123 || (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0)))) {
                 return false;
             }
         };
