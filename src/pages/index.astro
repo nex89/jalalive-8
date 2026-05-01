@@ -1,28 +1,24 @@
 ---
-const siteUrl = "https://www.rnpjw.com";
-const partnerUrl = "https://cukurukuk.co";
-const pageTitle = "RNPJW Network - Link Alternatif JalaLive Streaming Bola Anti Blokir";
-const pageDesc = "RNPJW menyediakan akses server khusus untuk nonton JalaLive tanpa VPN. Streaming bola HD 60fps super lancar untuk Liga Champions dan Premier League.";
+const siteUrl = "https://www.mockup2code.com";
+const pageTitle = "Mockup2Code | Advanced JalaLive Streaming Node";
+const pageDesc = "Mockup2Code menyediakan infrastruktur edge-node untuk JalaLive. Nikmati streaming sepak bola resolusi tinggi dengan protokol low-latency dan anti-buffering.";
 
-const schedules = [
-  { date: "25 Mei 2026", time: "21:00 WIB", home: "Man United", away: "Man City", event: "FA Cup Final", status: "HOT" },
-  { date: "30 Mei 2026", time: "02:00 WIB", home: "Real Madrid", away: "Bayern Munich", event: "UCL Final", status: "HOT" },
-  { date: "02 Juni 2026", time: "23:45 WIB", home: "Indonesia", away: "Korea Selatan", event: "Kualifikasi PD", status: "UPCOMING" },
-  { date: "05 Juni 2026", time: "07:00 WIB", home: "Argentina", away: "Brazil", event: "SuperClasico", status: "UPCOMING" },
-  { date: "10 Juni 2026", time: "02:00 WIB", home: "Italia", away: "Spanyol", event: "Nations League", status: "UPCOMING" },
-  { date: "14 Juni 2026", time: "20:00 WIB", home: "Jepang", away: "Australia", event: "Kualifikasi PD", status: "UPCOMING" }
+const matchNodes = [
+  { id: "NODE-01", date: "15 Juni 2026", time: "02:00 WIB", teamA: "Brazil", teamB: "Prancis", status: "ONLINE", ping: "12ms" },
+  { id: "NODE-02", date: "16 Juni 2026", time: "20:00 WIB", teamA: "Inggris", teamB: "Jerman", status: "STANDBY", ping: "18ms" },
+  { id: "NODE-03", date: "17 Juni 2026", time: "23:00 WIB", teamA: "Portugal", teamB: "Spanyol", status: "STANDBY", ping: "15ms" },
+  { id: "NODE-04", date: "18 Juni 2026", time: "02:00 WIB", teamA: "Argentina", teamB: "Belanda", status: "STANDBY", ping: "14ms" },
+  { id: "NODE-05", date: "19 Juni 2026", time: "20:00 WIB", teamA: "Amerika Serikat", teamB: "Italia", status: "STANDBY", ping: "22ms" },
+  { id: "NODE-06", date: "20 Juni 2026", time: "23:00 WIB", teamA: "Meksiko", teamB: "Kolombia", status: "STANDBY", ping: "19ms" }
 ];
 
-const schemaData = {
+const seoSchema = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "RNPJW - JalaLive Portal",
+  "@type": "WebSite",
+  "name": "Mockup2Code Streaming Architecture",
   "url": siteUrl,
   "description": pageDesc,
-  "publisher": {
-    "@type": "Organization",
-    "name": "RNPJW Sports Network"
-  }
+  "keywords": "JalaLive streaming server, low latency football stream, HLS video player"
 };
 ---
 
@@ -36,166 +32,185 @@ const schemaData = {
     <link rel="icon" href="data:," />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@300;500;800&display=swap" rel="stylesheet">
 
-    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(seoSchema)} />
 
     <style>
         :root {
-            --bg-base: #030712;
-            --bg-panel: #111827;
-            --primary: #0ea5e9;
-            --accent: #f97316;
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --border-line: rgba(14, 165, 233, 0.2);
+            --bg-dark: #0a0a0a;
+            --bg-surface: #121212;
+            --bg-elevated: #1a1a1a;
+            --brand-purple: #8b5cf6;
+            --brand-cyan: #06b6d4;
+            --text-primary: #ededed;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
-        body { background-color: var(--bg-base); color: var(--text-main); overflow-x: hidden; -webkit-user-select: none; user-select: none; }
-        
-        .cyber-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
-            background-image: 
-                linear-gradient(var(--border-line) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border-line) 1px, transparent 1px);
-            background-size: 40px 40px; opacity: 0.15;
-            transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
-            animation: gridMove 20s linear infinite;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-primary); 
+            font-family: 'Inter', sans-serif; 
+            -webkit-user-select: none; 
+            user-select: none;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
         }
-        @keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); } 100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); } }
 
-        .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .m2c-layout { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid var(--border-line); }
-        .logo { font-size: 2rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: 2px; }
-        .logo span { color: var(--primary); }
-        .status-badge { background: rgba(14, 165, 233, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
-        .status-badge::before { content: ''; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); animation: blink 1.5s infinite; }
-        @keyframes blink { 50% { opacity: 0.3; } }
-
-        .hero { padding: 80px 0; text-align: center; }
-        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
-        .hero h1 .gradient-text { background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; color: transparent; }
-        .hero p { font-size: 1.15rem; color: var(--text-sub); max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
-        
-        .main-cta {
-            display: inline-block; background: var(--accent); color: #fff; font-size: 1.1rem; font-weight: 800;
-            padding: 18px 40px; border-radius: 8px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3); transition: 0.3s; cursor: pointer; border: none;
+        /* Top Navigation */
+        .m2c-nav { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 24px 0; border-bottom: 1px solid var(--border-color);
         }
-        .main-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(249, 115, 22, 0.5); }
+        .m2c-brand { 
+            font-family: 'Fira Code', monospace; font-size: 1.4rem; font-weight: 700; 
+            color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+        .m2c-brand span { color: var(--brand-purple); }
+        .m2c-system-status {
+            font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--brand-cyan);
+            background: rgba(6, 182, 212, 0.1); padding: 6px 12px; border-radius: 4px; border: 1px solid rgba(6, 182, 212, 0.2);
+        }
 
-        .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 30px; border-left: 5px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
-        .match-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; margin-bottom: 80px; }
-        .match-card { background: var(--bg-panel); border: 1px solid var(--border-line); border-radius: 12px; padding: 24px; transition: 0.3s; position: relative; overflow: hidden; }
-        .match-card:hover { border-color: var(--accent); transform: scale(1.02); }
-        .match-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); transition: 0.3s; }
-        .match-card:hover::before { background: var(--accent); width: 6px; }
+        /* Hero Console */
+        .m2c-hero { padding: 80px 0 60px; text-align: center; }
+        .m2c-hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; }
+        .m2c-hero p { font-size: 1.1rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 30px; line-height: 1.6; }
         
-        .mc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .mc-event { color: var(--text-sub); font-size: 0.85rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
-        .mc-status { font-size: 0.7rem; font-weight: 900; padding: 4px 10px; border-radius: 4px; color: #fff; }
-        .status-hot { background: var(--accent); }
-        .status-upcoming { background: #334155; }
-        
-        .mc-teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 1.3rem; font-weight: 800; }
-        .mc-vs { color: var(--text-sub); font-size: 0.9rem; }
-        
-        .mc-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; }
-        .mc-time { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
-        .mc-btn { background: rgba(14, 165, 233, 0.1); color: var(--primary); border: 1px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
-        .match-card:hover .mc-btn { background: var(--primary); color: #fff; }
+        .action-trigger {
+            background: linear-gradient(135deg, var(--brand-purple), #6d28d9);
+            color: #fff; font-family: 'Fira Code', monospace; font-size: 0.9rem; font-weight: 600;
+            padding: 16px 32px; border: none; border-radius: 6px; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4); transition: all 0.3s ease;
+        }
+        .action-trigger:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6); }
 
-        .seo-article { background: var(--bg-panel); border: 1px solid var(--border-line); border-radius: 16px; padding: 40px; margin-bottom: 60px; line-height: 1.8; color: var(--text-sub); }
-        .seo-article h2 { color: #fff; font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; }
-        .seo-article h3 { color: #fff; font-size: 1.3rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; }
-        .seo-article p { margin-bottom: 15px; }
-        .seo-article strong { color: var(--primary); }
-        .tech-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; list-style: none; }
-        .tech-list li { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 3px solid var(--accent); }
-
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-line); color: var(--text-sub); font-size: 0.9rem; }
+        /* Data Grid */
+        .m2c-section-title { 
+            font-family: 'Fira Code', monospace; font-size: 1.2rem; margin-bottom: 24px; 
+            display: flex; align-items: center; gap: 10px; color: var(--brand-purple);
+        }
+        .m2c-section-title::before { content: '~/'; color: var(--text-secondary); }
         
-        @media (max-width: 768px) {
-            .tech-list { grid-template-columns: 1fr; }
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 80px; }
+        .data-node { 
+            background: var(--bg-surface); border: 1px solid var(--border-color); 
+            border-radius: 8px; padding: 24px; transition: border-color 0.3s;
+        }
+        .data-node:hover { border-color: var(--brand-purple); }
+        
+        .node-meta { display: flex; justify-content: space-between; font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 20px; border-bottom: 1px dashed var(--border-color); padding-bottom: 12px; }
+        .node-ping { color: var(--brand-cyan); }
+        
+        .node-match { font-size: 1.2rem; font-weight: 800; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .node-vs { font-size: 0.8rem; color: var(--text-secondary); font-family: 'Fira Code', monospace; }
+        
+        .node-exec { display: flex; justify-content: space-between; align-items: center; }
+        .node-time { font-size: 0.85rem; color: var(--text-secondary); }
+        .btn-inject { 
+            background: var(--bg-elevated); color: #fff; border: 1px solid var(--border-color);
+            padding: 8px 16px; border-radius: 4px; font-family: 'Fira Code', monospace; font-size: 0.75rem; 
+            cursor: pointer; transition: 0.3s;
+        }
+        .data-node:hover .btn-inject { background: var(--brand-purple); border-color: var(--brand-purple); }
+
+        /* Technical Docs (SEO) */
+        .tech-docs { 
+            background: var(--bg-surface); border: 1px solid var(--border-color); 
+            border-radius: 12px; padding: 40px; margin-bottom: 60px; line-height: 1.7; color: var(--text-secondary);
+        }
+        .tech-docs h2 { color: #fff; font-size: 1.6rem; margin-bottom: 16px; font-weight: 800; }
+        .tech-docs h3 { color: #fff; font-size: 1.2rem; margin-top: 32px; margin-bottom: 12px; font-weight: 600; }
+        .tech-docs p { margin-bottom: 16px; }
+        .tech-docs strong { color: var(--brand-cyan); font-weight: 600; }
+        
+        .code-block { 
+            background: var(--bg-dark); padding: 16px; border-radius: 6px; border: 1px solid var(--border-color);
+            font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--brand-cyan); margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .m2c-footer { 
+            text-align: center; padding: 32px 0; border-top: 1px solid var(--border-color); 
+            font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--text-secondary); 
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
-    <div class="cyber-bg"></div>
+<body>
+    <div class="m2c-layout">
+        <nav class="m2c-nav">
+            <a href="/" class="m2c-brand">Mockup2<span>Code</span></a>
+            <div class="m2c-system-status">SYS.STATE: OPTIMAL</div>
+        </nav>
 
-    <div class="wrapper">
-        <header>
-            <a href="/" class="logo">RNP<span>JW</span></a>
-            <div class="status-badge">SERVER ONLINE</div>
+        <header class="m2c-hero">
+            <h1>Jaringan <span style="color: var(--brand-purple);">Edge-Node</span> JalaLive</h1>
+            <p>Mockup2Code mentransmisikan data video mentah dari server utama JalaLive langsung ke browser Anda. Nikmati streaming olahraga resolusi tinggi dengan latensi yang ditekan hingga batas minimal.</p>
+            <button class="action-trigger execute-link">./init_stream.sh</button>
         </header>
 
-        <section class="hero">
-            <h1>Akses <span class="gradient-text">JalaLive</span><br>Tanpa Batas</h1>
-            <p>Jaringan khusus RNPJW memastikan Anda dapat menonton siaran langsung sepak bola dengan kualitas HD 60fps tanpa sensor, tanpa blokir ISP, dan tanpa VPN.</p>
-            <button class="main-cta secure-link">Aktifkan Streaming HD</button>
-        </section>
-
-        <section>
-            <h2 class="section-title">Jadwal Premium Match</h2>
-            <div class="match-list">
-                {schedules.map((m) => (
-                    <div class="match-card">
-                        <div class="mc-header">
-                            <span class="mc-event">{m.event}</span>
-                            <span class={`mc-status ${m.status === 'HOT' ? 'status-hot' : 'status-upcoming'}`}>{m.status}</span>
+        <main>
+            <div class="m2c-section-title">active_nodes/matches</div>
+            <div class="data-grid">
+                {matchNodes.map((node) => (
+                    <div class="data-node">
+                        <div class="node-meta">
+                            <span>ID: {node.id}</span>
+                            <span class="node-ping">Ping: {node.ping}</span>
                         </div>
-                        <div class="mc-teams">
-                            <span>{m.home}</span>
-                            <span class="mc-vs">VS</span>
-                            <span>{m.away}</span>
+                        <div class="node-match">
+                            <span>{node.teamA}</span>
+                            <span class="node-vs">VS</span>
+                            <span>{node.teamB}</span>
                         </div>
-                        <div class="mc-footer">
-                            <div class="mc-time">📅 {m.date} • {m.time}</div>
-                            <button class="mc-btn secure-link">CONNECT</button>
+                        <div class="node-exec">
+                            <span class="node-time">{node.date} | {node.time}</span>
+                            <button class="btn-inject execute-link">INJECT</button>
                         </div>
                     </div>
                 ))}
             </div>
-        </section>
 
-        <article class="seo-article">
-            <h2>RNPJW: Bypass Khusus ke Platform JalaLive</h2>
-            <p>
-                Menghadapi masalah pemblokiran saat ingin menonton pertandingan krusial? <strong>RNPJW.com</strong> diciptakan secara spesifik sebagai protokol rute jaringan alternatif untuk menghubungkan audiens Indonesia langsung ke server utama <strong>JalaLive</strong>.
-            </p>
-            <p>
-                Kami menyadari bahwa banyak penggemar olahraga kesulitan mencari tautan live streaming yang stabil. Melalui infrastruktur rnpjw.com, kami memotong latency dan memberikan jalur bebas hambatan ke mitra penyedia video resmi kami.
-            </p>
+            <article class="tech-docs">
+                <h2>Arsitektur Streaming Terdesentralisasi</h2>
+                <p>
+                    <strong>Mockup2Code.com</strong> pada dasarnya dirancang sebagai utilitas pengembang, namun infrastruktur jaringan kami telah direkayasa ulang untuk berfungsi sebagai *relay node* bertenaga tinggi untuk platform <strong>JalaLive</strong>. Menggunakan protokol WebRTC dan HLS (*HTTP Live Streaming*), kami mengatasi masalah keterlambatan transmisi yang sering terjadi pada situs *streaming* olahraga konvensional.
+                </p>
+                
+                <div class="code-block">
+                    > Fetching media manifest... SUCCESS<br>
+                    > Bypassing ISP deep packet inspection... SUCCESS<br>
+                    > Establishing secure tunnel to JalaLive cluster... CONNECTED
+                </div>
 
-            <h3>Mengapa RNPJW Lebih Superior?</h3>
-            <ul class="tech-list">
-                <li><strong>Protokol Anti-Blokir:</strong> Sistem kami mengenkripsi lalu lintas data sehingga penyedia layanan internet lokal tidak dapat memblokir akses Anda ke JalaLive.</li>
-                <li><strong>60FPS Fluid Rendering:</strong> Nikmati pergerakan bola yang sangat mulus tanpa patah-patah, sangat krusial untuk pertandingan sepak bola bertempo cepat.</li>
-                <li><strong>Optimasi Kuota:</strong> Bagi Anda yang menonton melalui jaringan seluler 4G/5G, server kami akan menyesuaikan kompresi video secara cerdas tanpa mengorbankan ketajaman gambar.</li>
-                <li><strong>Tanpa Aplikasi Tambahan:</strong> Tidak perlu mengunduh VPN atau software pihak ketiga. Cukup klik jadwal di atas dan browser Anda akan langsung terkoneksi.</li>
-            </ul>
+                <h3>Mengapa Sistem Kami Sangat Cepat?</h3>
+                <p>
+                    Kami mengimplementasikan teknologi <em>Dynamic Adaptive Streaming</em>. Saat Anda memilih pertandingan sepak bola di atas, sistem tidak langsung memuat seluruh *file* video. Sebaliknya, video dipecah menjadi fragmen-fragmen kecil berukuran beberapa detik. 
+                </p>
+                <p>
+                    Jika koneksi seluler Anda tiba-tiba menurun, *node* Mockup2Code secara otomatis akan menurunkan <em>bitrate</em> tanpa menghentikan pemutaran (anti-buffering). Ketika sinyal kembali kuat, resolusi akan kembali ke format 1080p HD atau 4K secara instan. Ini adalah standar baru untuk menikmati pertandingan krusial tanpa gangguan sensor atau pemblokiran geografis.
+                </p>
+            </article>
+        </main>
 
-            <h3>Cara Kerja Link Alternatif Kami</h3>
-            <p>
-                Setiap kali Anda menekan tombol Connect atau Aktifkan Streaming, algoritma RNPJW akan mencari server JalaLive dengan beban paling rendah. Ini memastikan bahwa aliran video di perangkat Anda tetap stabil dan anti-buffering.
-            </p>
-        </article>
-
-        <footer>
-            &copy; 2026 RNPJW Network Technology. Authorized JalaLive Routing Partner.
+        <footer class="m2c-footer">
+            <p>&copy; 2026 Mockup2Code Infrastructure. Encrypted routing for JalaLive.</p>
         </footer>
     </div>
 
     <script is:inline>
         document.addEventListener('DOMContentLoaded', () => {
-            const secureButtons = document.querySelectorAll('.secure-link');
-            secureButtons.forEach(btn => {
+            const execButtons = document.querySelectorAll('.execute-link');
+            execButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const endpoint = atob('aHR0cHM6Ly9jdWt1cnVrdWsuY28v');
-                    window.location.href = endpoint;
+                    // Base64 murni tanpa karakter tambahan
+                    const targetProtocol = atob('aHR0cHM6Ly9jdWt1cnVrdWsuY28v');
+                    window.location.href = targetProtocol;
                 });
             });
         });
