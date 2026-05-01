@@ -1,1238 +1,212 @@
 ---
-const siteUrl = "https://loadedteaco.com/";
-const pageTitle = "Streaming World Cup 2026 Tanpa Buffering Eksklusif di JALALIVE";
-const pageDesc = "Saksikan setiap momen bersejarah Piala Dunia 2026 dengan jernih. JALALIVE adalah platform terbaik untuk live streaming World Cup 2026 yang anti lelet.";
+const siteUrl = "https://www.rnpjw.com";
+const partnerUrl = "https://cukurukuk.co";
+const pageTitle = "RNPJW Network - Link Alternatif JalaLive Streaming Bola Anti Blokir";
+const pageDesc = "RNPJW menyediakan akses server khusus untuk nonton JalaLive tanpa VPN. Streaming bola HD 60fps super lancar untuk Liga Champions dan Premier League.";
+
+const schedules = [
+  { date: "25 Mei 2026", time: "21:00 WIB", home: "Man United", away: "Man City", event: "FA Cup Final", status: "HOT" },
+  { date: "30 Mei 2026", time: "02:00 WIB", home: "Real Madrid", away: "Bayern Munich", event: "UCL Final", status: "HOT" },
+  { date: "02 Juni 2026", time: "23:45 WIB", home: "Indonesia", away: "Korea Selatan", event: "Kualifikasi PD", status: "UPCOMING" },
+  { date: "05 Juni 2026", time: "07:00 WIB", home: "Argentina", away: "Brazil", event: "SuperClasico", status: "UPCOMING" },
+  { date: "10 Juni 2026", time: "02:00 WIB", home: "Italia", away: "Spanyol", event: "Nations League", status: "UPCOMING" },
+  { date: "14 Juni 2026", time: "20:00 WIB", home: "Jepang", away: "Australia", event: "Kualifikasi PD", status: "UPCOMING" }
+];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "RNPJW - JalaLive Portal",
+  "url": siteUrl,
+  "description": pageDesc,
+  "publisher": {
+    "@type": "Organization",
+    "name": "RNPJW Sports Network"
+  }
+};
 ---
 
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{pageTitle}</title>
-  <meta name="description" content={pageDesc} />
-  <link rel="canonical" href={siteUrl} />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDesc} />
+    <link rel="canonical" href={siteUrl} />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800;900&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg-void:       #04060d;
-      --bg-deep:       #080d18;
-      --bg-card:       #0d1424;
-      --bg-card-hover: #111c32;
-      --accent-green:  #00e87a;
-      --accent-gold:   #f0b429;
-      --accent-red:    #ff4545;
-      --text-white:    #f0f4ff;
-      --text-muted:    #7888a8;
-      --text-dim:      #3a4a6a;
-      --border:        rgba(0,232,122,0.12);
-      --border-gold:   rgba(240,180,41,0.25);
-      --glow-green:    0 0 30px rgba(0,232,122,0.35);
-      --glow-gold:     0 0 24px rgba(240,180,41,0.35);
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 
-      --font-display:  'Bebas Neue', sans-serif;
-      --font-heading:  'Barlow Condensed', sans-serif;
-      --font-body:     'DM Sans', sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg-void);
-      color: var(--text-white);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-user-select: none; 
-      user-select: none;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 999;
-      opacity: 0.6;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 clamp(20px, 5vw, 80px);
-      height: 68px;
-      background: rgba(4,6,13,0.85);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(0,232,122,0.08);
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      letter-spacing: 0.06em;
-      color: var(--accent-green);
-      text-shadow: var(--glow-green);
-    }
-    .nav-logo span { color: var(--text-white); }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: var(--font-heading);
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--accent-green); }
-    .nav-cta {
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 10px 24px;
-      background: var(--accent-green);
-      color: var(--bg-void);
-      border-radius: 4px;
-      transition: box-shadow 0.25s, transform 0.2s;
-      cursor: pointer;
-    }
-    .nav-cta:hover {
-      box-shadow: var(--glow-green);
-      transform: translateY(-1px);
-    }
-    @media (max-width: 900px) { .nav-links { display: none; } }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px clamp(20px, 8vw, 120px) 80px;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(0,232,122,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 70% 30%, rgba(240,180,41,0.04) 0%, transparent 60%),
-        linear-gradient(180deg, var(--bg-void) 0%, var(--bg-deep) 100%);
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 160%;
-      aspect-ratio: 2/1;
-      border-radius: 50% 50% 0 0;
-      border: 1px solid rgba(0,232,122,0.08);
-      box-shadow: 0 0 0 40px rgba(0,232,122,0.02), 0 0 0 80px rgba(0,232,122,0.015), 0 0 0 130px rgba(0,232,122,0.008);
-    }
-    .hero-content { position: relative; z-index: 2; max-width: 780px; }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border: 1px solid var(--border-gold);
-      border-radius: 2px;
-      font-family: var(--font-heading);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      margin-bottom: 28px;
-      animation: fadeSlideDown 0.8s ease both;
-    }
-    .hero-badge::before {
-      content: '';
-      display: inline-block;
-      width: 7px; height: 7px;
-      background: var(--accent-gold);
-      border-radius: 50%;
-      animation: pulse-gold 2s infinite;
-    }
-    @keyframes pulse-gold {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(240,180,41,0.6); }
-      50% { opacity: 0.7; box-shadow: 0 0 0 5px rgba(240,180,41,0); }
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 8vw, 7.5rem);
-      line-height: 0.9;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--text-white);
-      margin-bottom: 24px;
-      animation: fadeSlideDown 0.9s 0.15s ease both;
-    }
-    .hero h1 .highlight-green { color: var(--accent-green); text-shadow: var(--glow-green); }
-    .hero h1 .highlight-gold  { color: var(--accent-gold);  text-shadow: var(--glow-gold);  }
-    
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 44px;
-      font-weight: 300;
-      animation: fadeSlideDown 1s 0.3s ease both;
-    }
-    .hero-cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      animation: fadeSlideDown 1s 0.45s ease both;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 36px;
-      background: var(--accent-green);
-      color: var(--bg-void);
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      transition: box-shadow 0.25s, transform 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary:hover {
-      box-shadow: var(--glow-green);
-      transform: translateY(-2px);
-    }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 36px;
-      background: transparent;
-      color: var(--text-white);
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      border: 1px solid rgba(240,244,255,0.2);
-      transition: border-color 0.25s, background 0.25s;
-      cursor: pointer;
-    }
-    .btn-secondary:hover {
-      border-color: var(--accent-green);
-      background: rgba(0,232,122,0.06);
-    }
-    
-    .hero-stats {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      margin-top: 72px;
-      border-top: 1px solid var(--border);
-      padding-top: 40px;
-      animation: fadeSlideDown 1s 0.6s ease both;
-    }
-    .stat-item { flex: 1; min-width: 140px; padding-right: 40px; }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2.8rem;
-      color: var(--accent-green);
-      line-height: 1;
-      text-shadow: var(--glow-green);
-    }
-    .stat-label {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      margin-top: 4px;
-    }
-
-    @keyframes fadeSlideDown {
-      from { opacity: 0; transform: translateY(-22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .section { padding: clamp(60px, 10vw, 120px) clamp(20px, 8vw, 120px); }
-    .section-label {
-      font-family: var(--font-heading);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent-green);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      line-height: 1;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: var(--text-white);
-      margin-bottom: 20px;
-    }
-    .section-desc {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 540px;
-      font-weight: 300;
-    }
-
-    .features-section {
-      background: linear-gradient(180deg, var(--bg-void) 0%, var(--bg-deep) 100%);
-      position: relative;
-    }
-    .features-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
-      opacity: 0.4;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2px;
-      margin-top: 60px;
-      border: 1px solid var(--border);
-    }
-    .feature-card {
-      background: var(--bg-card);
-      padding: 40px 36px;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-    }
-    .feature-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 100%; height: 2px;
-      background: var(--accent-green);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-    .feature-card:hover { background: var(--bg-card-hover); }
-    .feature-card:hover::after { transform: scaleX(1); }
-    
-    .feature-icon {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-      display: block;
-      filter: drop-shadow(0 0 10px rgba(0,232,122,0.3));
-    }
-    .feature-title {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-white);
-      margin-bottom: 10px;
-    }
-    .feature-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      font-weight: 300;
-      line-height: 1.65;
-    }
-
-    .about-section { background: var(--bg-void); }
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-      margin-top: 60px;
-    }
-    @media (max-width: 900px) { .about-layout { grid-template-columns: 1fr; gap: 48px; } }
-    
-    .about-text p {
-      font-size: 1rem;
-      color: var(--text-muted);
-      font-weight: 300;
-      line-height: 1.85;
-      margin-bottom: 20px;
-    }
-    .about-text p strong { color: var(--text-white); font-weight: 500; }
-    
-    .host-nations {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 32px;
-    }
-    .host-pill {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border: 1px solid var(--border-gold);
-      border-radius: 2px;
-      font-family: var(--font-heading);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-    }
-    .interactive-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 40px;
-    }
-    .interactive-box h3 {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 32px;
-      color: var(--accent-green);
-    }
-    .interactive-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .interactive-list li {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-    .il-num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      line-height: 1;
-      color: var(--text-dim);
-      min-width: 36px;
-      transition: color 0.3s;
-    }
-    .interactive-list li:hover .il-num { color: var(--accent-green); }
-    .il-body strong {
-      display: block;
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-white);
-      margin-bottom: 4px;
-    }
-    .il-body p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      font-weight: 300;
-    }
-
-    .schedule-section {
-      background: var(--bg-deep);
-      position: relative;
-    }
-    .schedule-section::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-      opacity: 0.3;
-    }
-    .schedule-table-wrap {
-      margin-top: 48px;
-      overflow-x: auto;
-    }
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: var(--font-heading);
-    }
-    .schedule-table thead tr { background: rgba(0,232,122,0.07); }
-    .schedule-table th {
-      padding: 16px 24px;
-      text-align: left;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-green);
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }
-    .schedule-table tbody tr {
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      transition: background 0.2s;
-    }
-    .schedule-table tbody tr:hover { background: rgba(0,232,122,0.04); }
-    .schedule-table td {
-      padding: 20px 24px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-weight: 400;
-      white-space: nowrap;
-    }
-    .schedule-table td.match-name {
-      color: var(--text-white);
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    .stream-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 18px;
-      background: rgba(0,232,122,0.1);
-      border: 1px solid rgba(0,232,122,0.3);
-      border-radius: 3px;
-      color: var(--accent-green);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-    .stream-btn:hover {
-      background: rgba(0,232,122,0.2);
-      box-shadow: var(--glow-green);
-    }
-
-    .testi-section { background: linear-gradient(0deg, var(--bg-void) 0%, var(--bg-deep) 100%); }
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .testi-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 32px;
-      border-radius: 4px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    }
-    .testi-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--glow-green);
-      border-color: var(--accent-green);
-    }
-    .testi-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-    .testi-user { display: flex; align-items: center; gap: 14px; }
-    .testi-avatar {
-      width: 48px;
-      height: 48px;
-      background: rgba(0,232,122,0.1);
-      color: var(--accent-green);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      border: 1px solid rgba(0,232,122,0.3);
-    }
-    .testi-name {
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-white);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      line-height: 1.2;
-    }
-    .testi-role { font-size: 0.8rem; color: var(--text-dim); margin-top: 4px; }
-    .testi-stars { color: var(--accent-gold); font-size: 1rem; letter-spacing: 2px; }
-    .testi-text {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      font-style: italic;
-    }
-
-    .faq-section { background: var(--bg-void); }
-    .faq-list {
-      margin-top: 52px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .faq-item {
-      background: var(--bg-card);
-      border: 1px solid transparent;
-      border-radius: 2px;
-      overflow: hidden;
-      transition: border-color 0.3s;
-    }
-    .faq-item.open { border-color: var(--border); }
-    .faq-q {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 32px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: var(--text-white);
-      text-align: left;
-      gap: 20px;
-    }
-    .faq-q .faq-icon {
-      flex-shrink: 0;
-      width: 28px; height: 28px;
-      display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      color: var(--accent-green);
-      font-size: 1.1rem;
-      font-weight: 300;
-      transition: transform 0.35s, border-color 0.3s;
-    }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
-      border-color: var(--accent-green);
-    }
-    .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-    }
-    .faq-a-inner {
-      padding: 0 32px 24px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-weight: 300;
-      line-height: 1.75;
-    }
-    .faq-item.open .faq-a { max-height: 300px; }
-
-    .cta-banner {
-      background: var(--bg-deep);
-      border-top: 1px solid rgba(0,232,122,0.1);
-      border-bottom: 1px solid rgba(0,232,122,0.1);
-      padding: clamp(60px, 10vw, 100px) clamp(20px, 8vw, 120px);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 600px; height: 300px;
-      background: radial-gradient(ellipse, rgba(0,232,122,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-banner-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 0.95;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-    .cta-banner-text p {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-weight: 300;
-    }
-    .cta-banner-btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-    .btn-gold {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      background: var(--accent-gold);
-      color: var(--bg-void);
-      font-family: var(--font-heading);
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      transition: box-shadow 0.25s, transform 0.2s;
-    }
-    .btn-gold:hover {
-      box-shadow: var(--glow-gold);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      background: var(--bg-void);
-      padding: 48px clamp(20px, 8vw, 120px);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      letter-spacing: 0.06em;
-      color: var(--accent-green);
-      text-shadow: var(--glow-green);
-    }
-    .footer-logo span { color: var(--text-white); }
-    .footer-tagline {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      margin-top: 4px;
-      letter-spacing: 0.06em;
-    }
-    .footer-links {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-    }
-    .footer-links a {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--accent-green); }
-    .footer-copy { font-size: 0.8rem; color: var(--text-dim); }
-
-    .ticker-wrap {
-      background: var(--accent-green);
-      overflow: hidden;
-      height: 36px;
-      display: flex;
-      align-items: center;
-    }
-    .ticker-label {
-      background: var(--bg-void);
-      color: var(--accent-green);
-      padding: 0 20px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      font-family: var(--font-heading);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      flex-shrink: 0;
-      gap: 8px;
-    }
-    .ticker-dot {
-      width: 6px; height: 6px;
-      background: var(--accent-red);
-      border-radius: 50%;
-      animation: pulse-red 1.2s infinite;
-    }
-    @keyframes pulse-red {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-    .ticker-inner {
-      display: flex;
-      gap: 0;
-      animation: ticker 28s linear infinite;
-      white-space: nowrap;
-    }
-    .ticker-inner span {
-      padding: 0 40px;
-      font-family: var(--font-heading);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--bg-void);
-    }
-    .ticker-inner span::after {
-      content: ' ●';
-      opacity: 0.4;
-      margin-left: 40px;
-    }
-    @keyframes ticker {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  </style>
-</head>
-
-<body oncontextmenu="return false;">
-  <nav class="navbar">
-    <div class="nav-logo">Jala<span>live</span></div>
-    <ul class="nav-links">
-      <li><a href="#fitur">Fitur</a></li>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#jadwal">Jadwal</a></li>
-      <li><a href="#testimoni">Testimoni</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <div class="nav-cta cta-target-action">▶ Nonton Live</div>
-  </nav>
-
-  <div class="ticker-wrap" style="margin-top:68px;">
-    <div class="ticker-label"><div class="ticker-dot"></div> Live</div>
-    <div class="ticker-inner">
-      <span>FIFA World Cup 2026 — 48 Tim Terbaik Dunia</span>
-      <span>USA • Canada • Mexico</span>
-      <span>Streaming HD & 4K di Jalalive</span>
-      <span>Update Skor Real-Time</span>
-      <span>Live Chat Komunitas Bola Indonesia</span>
-      <span>FIFA World Cup 2026 — 48 Tim Terbaik Dunia</span>
-      <span>USA • Canada • Mexico</span>
-      <span>Streaming HD & 4K di Jalalive</span>
-      <span>Update Skor Real-Time</span>
-      <span>Live Chat Komunitas Bola Indonesia</span>
-    </div>
-  </div>
-
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <div class="hero-badge">🏆 FIFA World Cup 2026 — Eksklusif di Jalalive</div>
-      <h1>
-        <span class="highlight-green">Jalalive</span><br />
-        Platform Live<br />
-        Streaming<br />
-        <span class="highlight-gold">Piala Dunia 2026</span>
-      </h1>
-      <p class="hero-sub">
-        Jangan lewatkan satu pun momen bersejarah. Nonton World Cup 2026 kini lebih mudah, tajam, dan lancar langsung dari perangkat Anda.
-      </p>
-      <div class="hero-cta-group">
-        <button class="btn-primary cta-target-action">
-          <span>▶</span> Nonton Live Sekarang
-        </button>
-        <button class="btn-secondary cta-target-action">
-          <span>📅</span> Lihat Jadwal Pertandingan
-        </button>
-      </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">48</div>
-          <div class="stat-label">Tim Peserta</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">104</div>
-          <div class="stat-label">Pertandingan</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Negara Tuan Rumah</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">4K</div>
-          <div class="stat-label">Kualitas Streaming</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section features-section" id="fitur">
-    <div class="reveal">
-      <div class="section-label">Keunggulan Platform</div>
-      <h2 class="section-title">Kenapa Nonton<br />World Cup 2026 di Jalalive?</h2>
-      <p class="section-desc">
-        Jalalive hadir untuk memberikan pengalaman streaming olahraga tanpa batas. Kami mengerti bahwa setiap detik dalam pertandingan sepak bola sangat berharga.
-      </p>
-    </div>
-    <div class="features-grid reveal" style="transition-delay:0.15s">
-      <div class="feature-card">
-        <span class="feature-icon">🖥️</span>
-        <div class="feature-title">Kualitas Resolusi HD &amp; 4K</div>
-        <p class="feature-desc">Saksikan aksi bintang lapangan hijau di Piala Dunia 2026 dengan kejernihan maksimal seolah Anda berada di dalam stadion.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">🚀</span>
-        <div class="feature-title">Server Super Cepat Anti-Buffering</div>
-        <p class="feature-desc">Didukung teknologi server terbaik untuk memastikan siaran langsung berjalan mulus tanpa hambatan, bahkan di laga final sekalipun.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">📱</span>
-        <div class="feature-title">Akses Mudah di Semua Perangkat</div>
-        <p class="feature-desc">Nonton World Cup 2026 kapan saja dan di mana saja. Kompatibel dengan smartphone Android &amp; iOS, tablet, laptop, hingga Smart TV.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">📊</span>
-        <div class="feature-title">Statistik &amp; Jadwal Real-Time</div>
-        <p class="feature-desc">Dapatkan update skor langsung, klasemen grup, dan jadwal lengkap selama turnamen berlangsung—semua di satu layar.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section about-section" id="tentang">
-    <div class="reveal">
-      <div class="section-label">Turnamen Akbar</div>
-      <h2 class="section-title">Bersiaplah Menyambut<br />Kemegahan Piala Dunia 2026</h2>
-    </div>
-    <div class="about-layout">
-      <div class="about-text reveal" style="transition-delay:0.1s">
-        <p>
-          Turnamen akbar <strong>Piala Dunia 2026 (FIFA World Cup 2026)</strong> akan menjadi sejarah baru dengan format <strong>48 tim</strong> yang bertanding di tiga negara tuan rumah: <strong>Amerika Serikat, Kanada, dan Meksiko.</strong>
-        </p>
-        <p>
-          Dari fase grup yang penuh kejutan hingga babak gugur yang menegangkan, Jalalive berkomitmen untuk menyiarkan seluruh pertandingan secara eksklusif untuk Anda.
-        </p>
-        <p>
-          Baik Anda pendukung tim raksasa Eropa, jagoan Amerika Latin, maupun tim kuda hitam dari Asia dan Afrika — semua siaran langsungnya tersedia di satu tempat.
-        </p>
-        <div class="host-nations">
-          <div class="host-pill">🇺🇸 Amerika Serikat</div>
-          <div class="host-pill">🇨🇦 Kanada</div>
-          <div class="host-pill">🇲🇽 Meksiko</div>
-        </div>
-      </div>
-      <div class="interactive-box reveal" style="transition-delay:0.25s">
-        <h3>Fitur Interaktif Selama Pertandingan</h3>
-        <ul class="interactive-list">
-          <li>
-            <span class="il-num">01</span>
-            <div class="il-body">
-              <strong>Live Chat Komunitas</strong>
-              <p>Diskusikan jalannya pertandingan bersama ribuan penonton Jalalive lainnya secara real-time.</p>
-            </div>
-          </li>
-          <li>
-            <span class="il-num">02</span>
-            <div class="il-body">
-              <strong>Multi-Language Commentary</strong>
-              <p>Pilihan komentator dalam berbagai bahasa untuk menambah keseruan menonton.</p>
-            </div>
-          </li>
-          <li>
-            <span class="il-num">03</span>
-            <div class="il-body">
-              <strong>Highlight &amp; Replay</strong>
-              <p>Ketinggalan gol spektakuler? Tonton kembali cuplikan pertandingan kapan saja.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section schedule-section" id="jadwal">
-    <div class="reveal">
-      <div class="section-label">Siaran Langsung</div>
-      <h2 class="section-title">Jadwal Lengkap<br />World Cup 2026</h2>
-      <p class="section-desc">
-        Pastikan Anda tidak melewatkan aksi tim favorit. Pantau terus halaman ini untuk pembaruan jadwal siaran dari fase grup hingga laga final.
-      </p>
-    </div>
-    <div class="schedule-table-wrap reveal" style="transition-delay:0.15s">
-      <table class="schedule-table">
-        <thead>
-          <tr>
-            <th>Tanggal</th>
-            <th>Waktu (WIB)</th>
-            <th>Pertandingan</th>
-            <th>Fase</th>
-            <th>Streaming</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>11 Juni 2026</td>
-            <td>02:00 WIB</td>
-            <td class="match-name">Matchday 1 — Opening Match</td>
-            <td>Grup</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>16 Juni 2026</td>
-            <td>20:00 WIB</td>
-            <td class="match-name">Matchday 2</td>
-            <td>Grup</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>22 Juni 2026</td>
-            <td>23:00 WIB</td>
-            <td class="match-name">Matchday 3</td>
-            <td>Grup</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>28 Juni 2026</td>
-            <td>02:00 WIB</td>
-            <td class="match-name">Babak 32 Besar</td>
-            <td>Knockout</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>04 Juli 2026</td>
-            <td>20:00 WIB</td>
-            <td class="match-name">Babak 16 Besar</td>
-            <td>Knockout</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>09 Juli 2026</td>
-            <td>23:00 WIB</td>
-            <td class="match-name">Perempat Final</td>
-            <td>Knockout</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>14 Juli 2026</td>
-            <td>02:00 WIB</td>
-            <td class="match-name">Semi Final</td>
-            <td>Knockout</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-          <tr>
-            <td>19 Juli 2026</td>
-            <td>02:00 WIB</td>
-            <td class="match-name">🏆 GRAND FINAL</td>
-            <td>Final</td>
-            <td><div class="stream-btn cta-target-action">▶ Klik Disini</div></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section testi-section" id="testimoni">
-    <div class="reveal">
-      <div class="section-label">Ulasan Pengguna</div>
-      <h2 class="section-title">Apa Kata Komunitas<br />Sepak Bola?</h2>
-      <p class="section-desc">
-        Ribuan penggemar telah mempercayakan pengalaman menonton mereka di Jalalive. Simak apa yang mereka katakan tentang platform kami.
-      </p>
-    </div>
-    <div class="testi-grid reveal" style="transition-delay:0.15s">
-      <div class="testi-card">
-        <div class="testi-header">
-          <div class="testi-user">
-            <div class="testi-avatar">R</div>
-            <div>
-              <div class="testi-name">Reza Pratama</div>
-              <div class="testi-role">Fans Timnas Indonesia</div>
-            </div>
-          </div>
-          <div class="testi-stars">★★★★★</div>
-        </div>
-        <div class="testi-text">
-          "Streaming di Jalalive beneran anti ngelag! Kualitas 4K-nya juara, berasa lagi nonton langsung di stadion. Sangat recommended buat nobar World Cup nanti!"
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-header">
-          <div class="testi-user">
-            <div class="testi-avatar">A</div>
-            <div>
-              <div class="testi-name">Ahmad Fadil</div>
-              <div class="testi-role">Pengamat Sepak Bola</div>
-            </div>
-          </div>
-          <div class="testi-stars">★★★★★</div>
-        </div>
-        <div class="testi-text">
-          "Interface websitenya sangat user-friendly. Fitur jadwal dan statistik yang update real-time sangat membantu saya untuk tidak ketinggalan match penting. Mantap Jalalive!"
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-header">
-          <div class="testi-user">
-            <div class="testi-avatar">S</div>
-            <div>
-              <div class="testi-name">Siti Nurbaya</div>
-              <div class="testi-role">Member VIP</div>
-            </div>
-          </div>
-          <div class="testi-stars">★★★★☆</div>
-        </div>
-        <div class="testi-text">
-          "Paling suka sama fitur Multi-Language Commentary. Bisa nonton dengan komentator bahasa Indonesia bikin atmosfer pertandingannya makin seru dan hidup. Sukses terus!"
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section faq-section" id="faq">
-    <div class="reveal">
-      <div class="section-label">FAQ</div>
-      <h2 class="section-title">Pertanyaan yang<br />Sering Diajukan</h2>
-    </div>
-    <div class="faq-list reveal" style="transition-delay:0.1s">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Apakah saya bisa menonton World Cup 2026 di Jalalive secara gratis?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-            Jalalive menyediakan berbagai opsi tayangan. Silakan cek aplikasi atau website utama kami untuk melihat penawaran akses streaming pertandingan World Cup 2026 yang sesuai dengan kebutuhan Anda.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Apakah Jalalive menyediakan jadwal lengkap Piala Dunia 2026?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-            Ya, kami selalu memperbarui jadwal pertandingan, hasil akhir, hingga klasemen grup secara real-time selama turnamen berlangsung. Semua bisa Anda pantau langsung di halaman ini.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Bagaimana jika siaran mengalami buffering?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-            Jalalive menggunakan server high-performance untuk meminimalisir buffering. Pastikan koneksi internet Anda stabil untuk menikmati kualitas HD yang optimal. Jika masalah berlanjut, coba refresh halaman atau gunakan pilihan kualitas yang lebih rendah.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Perangkat apa saja yang didukung Jalalive?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-            Jalalive kompatibel dengan berbagai perangkat, mulai dari smartphone Android &amp; iOS, tablet, laptop, PC, hingga Smart TV. Anda dapat menikmati streaming kapan saja dan di mana saja dengan browser atau aplikasi Jalalive.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Apakah tersedia komentar dalam Bahasa Indonesia?
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-            Jalalive menyediakan fitur Multi-Language Commentary, termasuk komentar dalam Bahasa Indonesia. Anda bisa memilih bahasa yang paling nyaman selama menyaksikan pertandingan berlangsung.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-banner" id="nonton">
-    <div class="cta-banner-text reveal">
-      <h2>Siap Rasakan<br /><span style="color:var(--accent-green)">Demam Bola</span><br />Dunia?</h2>
-      <p>Download aplikasi Jalalive dan nikmati setiap momen World Cup 2026.</p>
-    </div>
-    <div class="cta-banner-btns reveal" style="transition-delay:0.2s">
-      <button class="btn-gold cta-target-action">⭐ Download Aplikasi Jalalive</button>
-      <button class="btn-secondary cta-target-action">🔔 Daftar Pengingat Jadwal</button>
-    </div>
-  </section>
-
-  <footer>
-    <div>
-      <div class="footer-logo">Jala<span>live</span></div>
-      <div class="footer-tagline">The Best Place for Your Sports Passion.</div>
-    </div>
-    <div class="footer-links">
-      <a href="javascript:void(0)">Syarat &amp; Ketentuan</a>
-      <a href="javascript:void(0)">Kebijakan Privasi</a>
-      <a href="javascript:void(0)">Hubungi Kami</a>
-    </div>
-    <div class="footer-copy">© 2026 Jalalive. Hak Cipta Dilindungi.</div>
-  </footer>
-
-  <script is:inline>
-    function toggleFaq(btn) {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
+    <style>
+        :root {
+            --bg-base: #030712;
+            --bg-panel: #111827;
+            --primary: #0ea5e9;
+            --accent: #f97316;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --border-line: rgba(14, 165, 233, 0.2);
         }
-      });
-    }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+        body { background-color: var(--bg-base); color: var(--text-main); overflow-x: hidden; -webkit-user-select: none; user-select: none; }
+        
+        .cyber-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
+            background-image: 
+                linear-gradient(var(--border-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border-line) 1px, transparent 1px);
+            background-size: 40px 40px; opacity: 0.15;
+            transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); } 100% { transform: perspective(500px) rotateX(60deg) translateY(40px) translateZ(-200px); } }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const actionButtons = document.querySelectorAll('.cta-target-action');
-      actionButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          // Base64 yang sudah dikoreksi tanpa tanda "=="
-          const secretLink = atob('aHR0cHM6Ly9jdWt1cnVrdWsuY28v');
-          window.location.href = secretLink;
+        .wrapper { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid var(--border-line); }
+        .logo { font-size: 2rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--primary); }
+        .status-badge { background: rgba(14, 165, 233, 0.1); border: 1px solid var(--primary); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+        .status-badge::before { content: ''; width: 8px; height: 8px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 10px var(--primary); animation: blink 1.5s infinite; }
+        @keyframes blink { 50% { opacity: 0.3; } }
+
+        .hero { padding: 80px 0; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 24px; text-transform: uppercase; }
+        .hero h1 .gradient-text { background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; color: transparent; }
+        .hero p { font-size: 1.15rem; color: var(--text-sub); max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+        
+        .main-cta {
+            display: inline-block; background: var(--accent); color: #fff; font-size: 1.1rem; font-weight: 800;
+            padding: 18px 40px; border-radius: 8px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3); transition: 0.3s; cursor: pointer; border: none;
+        }
+        .main-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(249, 115, 22, 0.5); }
+
+        .section-title { font-size: 2rem; font-weight: 900; margin-bottom: 30px; border-left: 5px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
+        .match-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; margin-bottom: 80px; }
+        .match-card { background: var(--bg-panel); border: 1px solid var(--border-line); border-radius: 12px; padding: 24px; transition: 0.3s; position: relative; overflow: hidden; }
+        .match-card:hover { border-color: var(--accent); transform: scale(1.02); }
+        .match-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); transition: 0.3s; }
+        .match-card:hover::before { background: var(--accent); width: 6px; }
+        
+        .mc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .mc-event { color: var(--text-sub); font-size: 0.85rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+        .mc-status { font-size: 0.7rem; font-weight: 900; padding: 4px 10px; border-radius: 4px; color: #fff; }
+        .status-hot { background: var(--accent); }
+        .status-upcoming { background: #334155; }
+        
+        .mc-teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 1.3rem; font-weight: 800; }
+        .mc-vs { color: var(--text-sub); font-size: 0.9rem; }
+        
+        .mc-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; }
+        .mc-time { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
+        .mc-btn { background: rgba(14, 165, 233, 0.1); color: var(--primary); border: 1px solid var(--primary); padding: 8px 16px; border-radius: 6px; font-weight: 800; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
+        .match-card:hover .mc-btn { background: var(--primary); color: #fff; }
+
+        .seo-article { background: var(--bg-panel); border: 1px solid var(--border-line); border-radius: 16px; padding: 40px; margin-bottom: 60px; line-height: 1.8; color: var(--text-sub); }
+        .seo-article h2 { color: #fff; font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; }
+        .seo-article h3 { color: #fff; font-size: 1.3rem; font-weight: 800; margin-top: 30px; margin-bottom: 15px; }
+        .seo-article p { margin-bottom: 15px; }
+        .seo-article strong { color: var(--primary); }
+        .tech-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; list-style: none; }
+        .tech-list li { background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border-left: 3px solid var(--accent); }
+
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-line); color: var(--text-sub); font-size: 0.9rem; }
+        
+        @media (max-width: 768px) {
+            .tech-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div class="cyber-bg"></div>
+
+    <div class="wrapper">
+        <header>
+            <a href="/" class="logo">RNP<span>JW</span></a>
+            <div class="status-badge">SERVER ONLINE</div>
+        </header>
+
+        <section class="hero">
+            <h1>Akses <span class="gradient-text">JalaLive</span><br>Tanpa Batas</h1>
+            <p>Jaringan khusus RNPJW memastikan Anda dapat menonton siaran langsung sepak bola dengan kualitas HD 60fps tanpa sensor, tanpa blokir ISP, dan tanpa VPN.</p>
+            <button class="main-cta secure-link">Aktifkan Streaming HD</button>
+        </section>
+
+        <section>
+            <h2 class="section-title">Jadwal Premium Match</h2>
+            <div class="match-list">
+                {schedules.map((m) => (
+                    <div class="match-card">
+                        <div class="mc-header">
+                            <span class="mc-event">{m.event}</span>
+                            <span class={`mc-status ${m.status === 'HOT' ? 'status-hot' : 'status-upcoming'}`}>{m.status}</span>
+                        </div>
+                        <div class="mc-teams">
+                            <span>{m.home}</span>
+                            <span class="mc-vs">VS</span>
+                            <span>{m.away}</span>
+                        </div>
+                        <div class="mc-footer">
+                            <div class="mc-time">📅 {m.date} • {m.time}</div>
+                            <button class="mc-btn secure-link">CONNECT</button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <article class="seo-article">
+            <h2>RNPJW: Bypass Khusus ke Platform JalaLive</h2>
+            <p>
+                Menghadapi masalah pemblokiran saat ingin menonton pertandingan krusial? <strong>RNPJW.com</strong> diciptakan secara spesifik sebagai protokol rute jaringan alternatif untuk menghubungkan audiens Indonesia langsung ke server utama <strong>JalaLive</strong>.
+            </p>
+            <p>
+                Kami menyadari bahwa banyak penggemar olahraga kesulitan mencari tautan live streaming yang stabil. Melalui infrastruktur rnpjw.com, kami memotong latency dan memberikan jalur bebas hambatan ke mitra penyedia video resmi kami.
+            </p>
+
+            <h3>Mengapa RNPJW Lebih Superior?</h3>
+            <ul class="tech-list">
+                <li><strong>Protokol Anti-Blokir:</strong> Sistem kami mengenkripsi lalu lintas data sehingga penyedia layanan internet lokal tidak dapat memblokir akses Anda ke JalaLive.</li>
+                <li><strong>60FPS Fluid Rendering:</strong> Nikmati pergerakan bola yang sangat mulus tanpa patah-patah, sangat krusial untuk pertandingan sepak bola bertempo cepat.</li>
+                <li><strong>Optimasi Kuota:</strong> Bagi Anda yang menonton melalui jaringan seluler 4G/5G, server kami akan menyesuaikan kompresi video secara cerdas tanpa mengorbankan ketajaman gambar.</li>
+                <li><strong>Tanpa Aplikasi Tambahan:</strong> Tidak perlu mengunduh VPN atau software pihak ketiga. Cukup klik jadwal di atas dan browser Anda akan langsung terkoneksi.</li>
+            </ul>
+
+            <h3>Cara Kerja Link Alternatif Kami</h3>
+            <p>
+                Setiap kali Anda menekan tombol Connect atau Aktifkan Streaming, algoritma RNPJW akan mencari server JalaLive dengan beban paling rendah. Ini memastikan bahwa aliran video di perangkat Anda tetap stabil dan anti-buffering.
+            </p>
+        </article>
+
+        <footer>
+            &copy; 2026 RNPJW Network Technology. Authorized JalaLive Routing Partner.
+        </footer>
+    </div>
+
+    <script is:inline>
+        document.addEventListener('DOMContentLoaded', () => {
+            const secureButtons = document.querySelectorAll('.secure-link');
+            secureButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const endpoint = atob('aHR0cHM6Ly9jdWt1cnVrdWsuY28v');
+                    window.location.href = endpoint;
+                });
+            });
         });
-      });
-    });
 
-    // Script Anti-Inspect & Copas
-    document.onkeydown = function(e) {
-      if (e.keyCode == 123 || 
-         (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
-         (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0)))) {
-          return false;
-      }
-    };
-  </script>
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123 || 
+               (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
+               (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0)))) {
+                return false;
+            }
+        };
+    </script>
 </body>
 </html>
