@@ -1,30 +1,26 @@
 ---
-// JalaLive Fresh Template - Gemini Edition 2026
-// Domain: centrepointestables.com
-// Style: Modern Glassmorphism & SEO Hybrid
-
-const siteUrl = "https://centrepointestables.com";
+const siteUrl = "https://www.instantradiostation.com";
 const partnerUrl = "https://cukurukuk.co";
-const pageTitle = "JalaLive - Nonton Bola Live Streaming HD Hari Ini Terlengkap";
-const pageDesc = "Akses JalaLive melalui centrepointestables.com. Link streaming bola HD tercepat, jadwal liga top dunia, dan partner resmi cukurukuk.co.";
+const pageTitle = "JalaLive - Link Nonton Live Streaming Bola HD Tercepat";
+const pageDesc = "JalaLive adalah situs nonton live streaming bola HD tanpa buffering. Cek jadwal lengkap Liga Inggris, Liga Champions, dan akses link alternatif JalaLive terbaru.";
 
 const matches = [
   { time: "02:00", date: "02 Mei", home: "Real Madrid", away: "Man City", league: "Champions League" },
-  { time: "02:00", date: "02 Mei", home: "Bayern Munich", away: "Arsenal", league: "Champions League" },
   { time: "23:45", date: "03 Mei", home: "AS Roma", away: "AC Milan", league: "Europa League" },
-  { time: "02:00", date: "03 Mei", home: "Liverpool", away: "Atalanta", league: "Europa League" },
   { time: "18:30", date: "04 Mei", home: "Arsenal", away: "Bournemouth", league: "Premier League" },
-  { time: "21:00", date: "04 Mei", home: "Man City", away: "Wolves", league: "Premier League" },
   { time: "21:15", date: "04 Mei", home: "Real Madrid", away: "Cadiz", league: "La Liga" },
-  { time: "23:30", date: "04 Mei", home: "Girona", away: "Barcelona", league: "La Liga" },
   { time: "01:45", date: "05 Mei", home: "Sassuolo", away: "Inter Milan", league: "Serie A" },
-  { time: "20:00", date: "05 Mei", home: "Chelsea", away: "West Ham", league: "Premier League" },
-  { time: "22:30", date: "05 Mei", home: "Liverpool", away: "Spurs", league: "Premier League" },
-  { time: "02:00", date: "06 Mei", home: "Crystal Palace", away: "Man United", league: "Premier League" },
-  { time: "02:00", date: "08 Mei", home: "PSG", away: "Dortmund", league: "Champions League" },
-  { time: "02:00", date: "09 Mei", home: "Real Madrid", away: "Bayern", league: "Champions League" },
-  { time: "02:00", date: "10 Mei", home: "Leverkusen", away: "Roma", league: "Europa League" }
+  { time: "22:30", date: "05 Mei", home: "Liverpool", away: "Spurs", league: "Premier League" }
 ];
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "JalaLive",
+  "alternateName": ["Jala Live", "JalaLive Streaming Bola", "JalaLive Alternatif"],
+  "url": siteUrl,
+  "description": pageDesc
+};
 ---
 
 <html lang="id">
@@ -36,145 +32,147 @@ const matches = [
     <link rel="canonical" href={siteUrl} />
     <link rel="icon" href="data:," />
 
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
     <style>
         :root {
-            --accent: #10b981;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
+            --primary: #10b981;
+            --secondary: #3b82f6;
+            --dark: #0f172a;
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
         }
         body {
-            background-color: #020617;
-            color: #e2e8f0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark);
+            color: #f8fafc;
+            font-family: 'Inter', system-ui, sans-serif;
             margin: 0;
             padding: 0;
             -webkit-user-select: none; user-select: none;
         }
         .bg-glow {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% -20%, #064e3b 0%, #020617 60%);
+            position: fixed; top: -20%; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.15) 0%, rgba(15, 23, 42, 1) 70%);
             z-index: -1;
         }
-        .nav {
-            padding: 25px 5%;
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        nav {
             display: flex; justify-content: space-between; align-items: center;
-            backdrop-filter: blur(10px); background: rgba(0,0,0,0.5);
-            border-bottom: 1px solid var(--border);
+            padding: 25px 0; border-bottom: 1px solid var(--border);
         }
-        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; text-decoration: none; color: #fff; }
-        .logo span { color: var(--accent); }
-        
-        .main { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        
-        .hero { text-align: center; margin-bottom: 50px; }
-        .hero h1 { font-size: 3rem; font-weight: 900; margin: 0; line-height: 1.1; }
-        .hero p { color: var(--accent); font-weight: 600; letter-spacing: 3px; font-size: 0.8rem; margin-top: 10px; }
+        .logo { font-size: 1.8rem; font-weight: 900; text-decoration: none; color: #fff; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        .partner-link { color: #64748b; text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; }
 
-        /* Grid System Modern */
-        .match-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
+        .hero { text-align: center; padding: 60px 0 50px; }
+        .live-badge { 
+            display: inline-block; background: #ef4444; color: #fff; font-size: 0.8rem; font-weight: 800; 
+            padding: 6px 16px; border-radius: 50px; margin-bottom: 20px; letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.4); animation: pulse 2s infinite;
         }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .hero h1 { font-size: 3rem; font-weight: 900; margin: 0 0 15px; line-height: 1.1; }
+        .hero p { font-size: 1.1rem; color: #94a3b8; max-width: 700px; margin: 0 auto; line-height: 1.6; }
+
+        .match-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-bottom: 60px; }
         .card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 25px;
-            backdrop-filter: blur(5px);
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 20px; padding: 25px; backdrop-filter: blur(10px);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            background: rgba(16, 185, 129, 0.05);
-        }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); background: rgba(16, 185, 129, 0.05); }
         .league-tag {
-            font-size: 0.65rem; font-weight: 700; color: var(--accent);
-            text-transform: uppercase; border: 1px solid var(--accent);
-            padding: 2px 8px; border-radius: 50px; display: inline-block; margin-bottom: 15px;
+            font-size: 0.7rem; font-weight: 800; color: var(--primary); text-transform: uppercase;
+            border: 1px solid var(--primary); padding: 4px 10px; border-radius: 50px; display: inline-block; margin-bottom: 15px;
         }
-        .teams { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; display: block; }
-        .footer-card {
-            display: flex; justify-content: space-between; align-items: center;
-            border-top: 1px solid var(--border); padding-top: 15px;
-        }
+        .teams { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; display: block; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 15px; }
         .time-info { font-size: 0.85rem; font-weight: 600; color: #94a3b8; }
         .btn-play {
             background: #fff; color: #000; text-decoration: none;
-            padding: 8px 20px; border-radius: 12px; font-weight: 800; font-size: 0.75rem;
-            transition: 0.3s;
+            padding: 8px 20px; border-radius: 12px; font-weight: 800; font-size: 0.75rem; transition: 0.3s;
         }
-        .btn-play:hover { background: var(--accent); color: #fff; }
+        .card:hover .btn-play { background: var(--primary); color: #fff; }
 
-        .article-box {
-            margin-top: 80px; padding: 40px; border-radius: 24px;
-            background: var(--glass); border: 1px solid var(--border);
-            line-height: 2; color: #94a3b8;
+        .seo-box {
+            background: rgba(0,0,0,0.4); border: 1px solid var(--border);
+            border-radius: 24px; padding: 40px; margin-bottom: 60px; line-height: 1.8; color: #cbd5e1;
         }
-        .article-box h2 { color: #fff; font-size: 2rem; margin-bottom: 25px; }
-        .article-box a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        .seo-box h2 { color: #fff; font-size: 2rem; margin-top: 0; margin-bottom: 20px; }
+        .seo-box h3 { color: #fff; font-size: 1.3rem; margin-top: 30px; margin-bottom: 15px; }
+        .keyword-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .keyword-list li { background: var(--surface); padding: 12px 20px; border-radius: 12px; border: 1px solid var(--border); font-weight: 600; font-size: 0.9rem; color: #38bdf8; display: flex; align-items: center; gap: 10px; }
+        .keyword-list li::before { content: '✓'; color: var(--primary); font-weight: bold; }
+        .seo-box p { margin-bottom: 15px; }
+        .seo-box a { color: var(--primary); text-decoration: none; font-weight: bold; }
     </style>
 </head>
-<body oncontextmenu="return false;">
+<body>
     <div class="bg-glow"></div>
 
-    <nav class="nav">
-        <a href="/" class="logo">JALA<span>LIVE</span></a>
-        <a href={partnerUrl} target="_blank" style="color: #64748b; text-decoration: none; font-size: 0.75rem; font-weight: 700;">OFFICIAL PARTNER: CUKURUKUK.CO</a>
-    </nav>
+    <div class="container">
+        <nav>
+            <a href="/" class="logo">JALA<span>LIVE</span></a>
+            <a href={partnerUrl} target="_blank" class="partner-link">SUPPORTED BY JALALIVE</a>
+        </nav>
 
-    <main class="main">
         <header class="hero">
-            <p>STREAMING BOLA TERBAIK</p>
-            <h1>Nonton Bola HD Tanpa Buffering</h1>
+            <span class="live-badge">🔴 LIVE STREAMING</span>
+            <h1>JalaLive: Pusat Nonton Bola Hari Ini</h1>
+            <p>Akses link JalaLive tercepat melalui domain instantradiostation.com. Nikmati siaran langsung pertandingan sepak bola dunia dengan resolusi HD tanpa hambatan.</p>
         </header>
 
-        <div class="match-grid">
-            {matches.map((m) => (
-                <div class="card">
-                    <span class="league-tag">{m.league}</span>
-                    <span class="teams">{m.home} vs {m.away}</span>
-                    <div class="footer-card">
-                        <div class="time-info">{m.time} • {m.date}</div>
-                        <a href={partnerUrl} target="_blank" class="btn-play">WATCH HD</a>
+        <main>
+            <div class="match-grid">
+                {matches.map((m) => (
+                    <div class="card">
+                        <span class="league-tag">{m.league}</span>
+                        <span class="teams">{m.home} vs {m.away}</span>
+                        <div class="card-footer">
+                            <div class="time-info">{m.time} • {m.date}</div>
+                            <a href={partnerUrl} target="_blank" class="btn-play">TONTON LIVE</a>
+                        </div>
                     </div>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
 
-        <article class="article-box">
-            <h2>JalaLive: Revolusi Menonton Sepak Bola Digital</h2>
-            <p>
-                Selamat datang di platform **JalaLive** melalui <a href={siteUrl}>centrepointestables.com</a>. Sebagai penyedia layanan informasi siaran langsung olahraga paling komprehensif, kami memahami kebutuhan Anda akan kecepatan dan kualitas. Di era di mana setiap detik pertandingan sangat berarti, JalaLive hadir dengan solusi streaming berlatensi rendah yang didukung sepenuhnya oleh mitra strategis kami, <a href={partnerUrl} target="_blank">cukurukuk.co</a>.
-            </p>
-            
-            <p>
-                Teknologi yang kami gunakan di centrepointestables.com dirancang untuk memprioritaskan performa. Dengan memanfaatkan framework Astro v4 yang sangat efisien, situs ini mampu memuat jadwal pertandingan dalam hitungan milidetik. Kami sengaja menghilangkan elemen visual yang tidak perlu seperti favicon untuk memastikan bahwa seluruh sumber daya perangkat Anda terfokus pada kelancaran aliran video streaming yang disediakan oleh <a href={partnerUrl} target="_blank">cukurukuk.co</a>.
-            </p>
+            <article class="seo-box">
+                <h2>JalaLive Streaming: Link Alternatif Nonton Bola HD</h2>
+                <p>
+                    Selamat datang di <strong>JalaLive</strong>, portal utama bagi para penggemar sepak bola di Indonesia yang mencari link live streaming berkualitas. Melalui domain <em>instantradiostation.com</em>, kami menghadirkan jadwal pertandingan ter-update dan akses langsung ke server penyiaran olahraga paling stabil hasil kolaborasi dengan <a href={partnerUrl} target="_blank">JALALIVE</a>.
+                </p>
 
-            <h3>Cakupan Kompetisi Terluas</h3>
-            <p>
-                JalaLive tidak hanya menyajikan pertandingan dari liga-liga populer seperti Premier League, La Liga, atau Serie A. Kami juga memberikan perhatian khusus pada turnamen internasional bergengsi seperti Liga Champions, Liga Europa, hingga kancah sepak bola Asia. Melalui integrasi data yang akurat di JalaLive, Anda bisa mendapatkan jadwal harian dari 15+ pertandingan papan atas secara real-time. 
-            </p>
+                <h3>Fokus Layanan & Keywords Utama Kami:</h3>
+                <ul class="keyword-list">
+                    <li>JalaLive Streaming Bola</li>
+                    <li>Nonton Bola Online Gratis</li>
+                    <li>Live Streaming Liga Inggris</li>
+                    <li>Link Alternatif JalaLive Terbaru</li>
+                    <li>Jadwal Bola Hari Ini Live</li>
+                    <li>JalaLive Apk Tanpa Buffering</li>
+                    <li>Nonton Liga Champions HD</li>
+                    <li>Streaming Bola Yandex Live</li>
+                </ul>
 
-            <h3>Keamanan dan Kenyamanan Pengguna</h3>
-            <p>
-                Keamanan digital adalah prioritas utama bagi JalaLive dan <a href={partnerUrl} target="_blank">cukurukuk.co</a>. Kami menerapkan sistem proteksi konten yang ketat untuk memastikan data Anda terlindungi selama menjelajahi platform kami. Dengan antarmuka yang bersih tanpa iklan yang mengganggu kenyamanan visual, JalaLive di centrepointestables.com menjadi standar baru bagi pecinta sepak bola di Indonesia yang mendambakan pengalaman menonton kelas dunia.
-            </p>
-        </article>
-    </main>
-
-    <footer style="text-align: center; padding: 50px; color: #475569; font-size: 0.8rem;">
-        &copy; 2026 JalaLive by centrepointestables.com. Partnered with <a href={partnerUrl} style="color: #475569; text-decoration: none;">cukurukuk.co</a>.
-    </footer>
+                <h3>Kenapa Memilih Link JalaLive di Sini?</h3>
+                <p>
+                    Sebagai platform direktori <strong>JalaLive streaming</strong> terdepan, kami menggunakan teknologi server edge yang memastikan situs ini selalu dapat diakses meskipun terjadi lonjakan pengunjung saat laga <em>Big Match</em>. Sistem kami secara otomatis memperbarui tautan (link alternatif JalaLive) setiap hari sehingga Anda tidak perlu khawatir ketinggalan siaran tim kesayangan Anda. Mulai dari Premier League, Serie A, La Liga, hingga turnamen internasional, semuanya tersedia lengkap.
+                </p>
+            </article>
+        </main>
+        
+        <footer style="text-align: center; padding: 40px 0; border-top: 1px solid var(--border); color: #64748b; font-size: 0.85rem;">
+            &copy; 2026 JalaLive Network. Broadcasted via instantradiostation.com. Partnered with JALALIVE.
+        </footer>
+    </div>
 
     <script is:inline>
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.onkeydown = function(e) {
-            if (e.keyCode == 123 || (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0)))) {
+            if (e.keyCode == 123 || 
+               (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || 
+               (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0)))) {
                 return false;
             }
         };
